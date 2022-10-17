@@ -1,0 +1,15 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: oc-backend
+spec:
+  replicas: 1
+  template:
+    spec:
+      containers:
+        - name: oc-backend
+          image: docker.io/containous/whoami:latest
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 80
+              name: http
